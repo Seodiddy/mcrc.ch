@@ -9,22 +9,22 @@ Minimalistischer One-Pager im Swiss International Typographic Style. Statisch, o
 ```
 index.html            Die gesamte Seite (HTML, CSS und JS inline)
 assets/fonts/         Lokal eingebettete Schriften (woff2: Archivo, IBM Plex Mono)
-CNAME                 Custom Domain für GitHub Pages (mcrc.ch)
-.nojekyll             Deaktiviert Jekyll-Processing auf GitHub Pages
 ```
 
 ## Lokal ansehen
 
 `index.html` direkt im Browser öffnen — es ist kein Server nötig.
 
-## Deployment (GitHub Pages)
+## Deployment (Vercel)
 
-1. Inhalt dieses Ordners in das Repository `Seodiddy/mcrc.ch` pushen (Branch `main`).
-2. In den Repo-Einstellungen unter **Pages**: Source „Deploy from a branch", Branch `main`, Ordner `/ (root)`.
-3. DNS für `mcrc.ch` beim Registrar auf GitHub Pages zeigen lassen:
-   - `A`-Records auf `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - optional `www` als `CNAME` auf `seodiddy.github.io`
-4. In den Pages-Einstellungen „Enforce HTTPS" aktivieren, sobald das Zertifikat ausgestellt ist.
+Das Projekt ist als statische Site (Framework-Preset «Other», kein Build-Befehl) mit diesem GitHub-Repository verbunden: Jeder Push auf `main` löst automatisch ein Production-Deployment aus.
+
+DNS für `mcrc.ch` beim Registrar:
+
+- `A`-Record `@` auf `76.76.21.21` (Vercel)
+- `CNAME` `www` auf `cname.vercel-dns.com`
+
+Alternativ die Vercel-Nameserver verwenden. Die zum Zeitpunkt der Einrichtung gültigen Werte zeigt `vercel domains inspect mcrc.ch` bzw. das Vercel-Dashboard unter Project → Settings → Domains.
 
 ## Inhalte pflegen
 
